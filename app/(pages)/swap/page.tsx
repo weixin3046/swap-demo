@@ -1,12 +1,27 @@
 "use client";
+import TokenModal from "@/app/components/TokenModal";
+import { tokens } from "@/app/constants/tokenList";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
+import { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
+import { useAccount, useConnect } from "wagmi";
 
 export default function SwapPage() {
+  const [isOpen, setIsOpen] = useState(false);
+  const { isConnected } = useAccount();
+  const { openConnectModal } = useConnectModal();
   const switchTokens = () => {};
   return (
     <>
+      <TokenModal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+        }}
+        tokenList={tokens}
+      />
       <div className="max-w-[480px] w-full pt-6 md:pt-16 px-2 ">
         <div>
           <div className="flex items-center justify-between mb-3">
@@ -44,7 +59,7 @@ export default function SwapPage() {
                 />
               </div>
               <div>
-                <button>ETH</button>
+                <button onClick={() => setIsOpen(true)}>ETH</button>
               </div>
             </div>
             <div className="flex items-center flex-row pt-2">
@@ -85,8 +100,14 @@ export default function SwapPage() {
             </div>
             {/* <input type="text" /> */}
           </div>
-          <div>
-            <button className="w-full mt-2">Swap</button>
+          <div className="mt-2">
+            {isConnected ? (
+              <button className="w-full">Swap</button>
+            ) : (
+              <button className="w-full" onClick={openConnectModal}>
+                Connect wallet
+              </button>
+            )}
           </div>
         </div>
       </div>
