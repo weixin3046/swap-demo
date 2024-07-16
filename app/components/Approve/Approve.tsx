@@ -30,7 +30,7 @@ export default function Approve() {
       {isPending && "loading"}
       {`address: ${0x0d3b0b607dc1c983b5e7e9a300e1c197e7f3eb0a}`}
       <div>
-        args: ["0x473aebc79d8683e4c2db002d6413024ed6131ff3", BigInt(1)],
+        {`args: ["0x473aebc79d8683e4c2db002d6413024ed6131ff3", BigInt(1)]`}
       </div>
       <button onClick={handleClick}>Approve ERC721</button>
     </div>

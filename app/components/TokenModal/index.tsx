@@ -32,7 +32,7 @@ function TokenItem({
             aria-hidden="true"
             className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
           /> */}
-          <img src={item.img} alt="" width={36} height={36} />
+          {/* <img src={item.img} alt="" width={36} height={36} /> */}
         </div>
         <div className="flex-auto">
           <p className="block font-semibold text-gray-900">{item.ticker}</p>
