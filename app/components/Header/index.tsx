@@ -16,6 +16,9 @@ export default function Header() {
         <Link href="/tokens" className="hidden md:block">
           <div>Tokens</div>
         </Link>
+        <Link href="/wallet" className="hidden md:block">
+          <div>HD Wallet</div>
+        </Link>
       </div>
       <div className="flex gap-5 items-center justify-end">
         {/* <div className="headerItem">
