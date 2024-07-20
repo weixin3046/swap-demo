@@ -18,12 +18,21 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  /* 去除input 右边的箭头 */
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    -moz-appearance: textfield;
   }
 }
 

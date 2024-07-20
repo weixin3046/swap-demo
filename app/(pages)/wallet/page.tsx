@@ -27,6 +27,12 @@ export default function WalletPage() {
       //3.通过hdkey将seed生成HD Wallet
       const hdWallet = hdkey.fromMasterSeed(seed);
       //4.生成钱包中在m/44'/60'/0'/0/i路径的keypair
+      // m / purpose' / coin_type' / account' / change / address_index
+      // purpose'：用途字段，44表示遵循BIP-44
+      // coin_type'：币种字段，例如60表示以太坊，0表示比特币
+      // account'：账户索引，用于支持多个账户
+      // change：0表示外部链，用于接收地址，1表示内部链，用于找零地址
+      // address_index：地址索引，用于生成特定的地址
       const keyPair = hdWallet.derivePath("m/44'/60'/0'/0/0");
       // 获取钱包对象
       const wallet = keyPair.getWallet();

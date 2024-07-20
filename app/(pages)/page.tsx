@@ -9,8 +9,11 @@ export default function Home() {
       <TextModdal />
       <Approve /> */}
       {/* <Min */}
-      <h1>欢迎大家来到我的个人swap页面</h1>
-      <Approve />
+      <h1>欢迎大家来到我的个人Dapp页面</h1>
+      <div>
+        <h3>这是用来测试 Approve功能的演示</h3>
+        <Approve />
+      </div>
     </div>
   );
 }
